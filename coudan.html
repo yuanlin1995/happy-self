@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/mui/dist/css/mui.min.css">
+    <link rel="stylesheet" href="./fonts/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/coudan.css">
+
+    <script src="./lib/jquery/jquery3.min.js"></script>
+    <script src="./lib/mui/dist/js/mui.min.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/coudan.js"></script>
+</head>
+
+<body>
+    <div class="header" id="header">
+        <a href="javascript:void(0)" class="back">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <span class="title">凑单品</span>
+        <a href="#" class="downloadApp">
+            <img src="./images/download.png" alt="">
+        </a>
+    </div>
+    <div class="main">
+        <div class="topBar">
+            <div class="nav">
+                <span class="shop">
+                    <em>京东</em>
+                    <i class="fa fa-caret-up"></i>
+                </span>
+                <span class="area">
+                    <em>华北</em>
+                    <i class="fa fa-caret-up"></i>
+                </span>
+                <span class="price">全部价格
+                    <i class="fa fa-caret-up"></i>
+                </span>
+            </div>
+            <div class="search">
+                <i class="fa fa-search"></i>
+            </div>
+            <div class="list">
+                <ul class="shopList">
+                </ul>
+                <ul class="areaList">
+                </ul>
+            </div>
+        </div>
+        <div class="product">
+            <ul>
+                <li>
+                    <img src="" alt="">
+                    <p class="productName">说三道四盛世嫡妃 1</p>
+                    <p class="bar">
+                        <span class="price">¥559</span>
+                        <a href="" class="link">去凑单</a>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="bar">
+            <a class="login" href="#">登录</a>
+            <a class="register" href="#">注册</a>
+            <a class="top" href="#header">
+                <span class="fa fa-arrow-up"></span>返回顶部</a>
+        </div>
+        <div class="content">
+            <p class="title">
+                <span class="app">手机APP下载</span>
+                <span>慢慢买手机版 -- 掌上比价平台</span>
+            </p>
+            <p class="web">m.manmanbuy.com</p>
+        </div>
+    </div>
+</body>
+
+</html>
+<script type="text/html" id="showTpl">
+    {{ each list value key}}
+    <li data-shopid="{{value.shopId}}">{{value.shopName}}
+        <div class="check">
+            {{ if (key == 0) }}
+            <i class="fa fa-check"></i>
+            {{ /if }}
+        </div>
+
+    </li>
+    {{ /each }}
+</script>
+
+<script type="text/html" id="areaTpl">
+    {{ each list value key}}
+    <li data-areaid="{{value.areaId}}">{{value.areaName}}
+        <div class="check">
+            {{ if (key == 0) }}
+            <i class="fa fa-check"></i>
+            {{ /if }}
+        </div>
+
+    </li> {{ /each }}
+</script>
+
+<script type="text/html" id="productTpl">
+    {{each list value }}
+    <li>
+        <img src="{{value.productImg}}" alt="">
+        <p class="productName">{{value.productName}}</p>
+        <p class="bar">
+            <span class="price">{{value.productPrice}}</span>
+            <a href="" class="link">去凑单</a>
+        </p>
+    </li>
+    {{ /each }}
+</script>

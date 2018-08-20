@@ -1,94 +1,9 @@
-//将px转换为rem
-@function pr($p) {
-    @return $p / 37.5+rem;
-}
-
-//初始化代码
-p,
-div,
-span,
-img,
-a,
-input,
-ol,
-ul,
-li,
-i,
-em,
-strong,
-h1,
-h2,
-h3,
-h4,
-body,
-del {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-a {
-    text-decoration: none;
-    color: #5c6066;
-}
-
-ol,
-ul,
-li {
-    list-style: none;
-}
-
-img {
-    border: 0 none;
-    vertical-align: middle;
-}
-
-input {
-    outline: 0 none;
-    border: 0 none;
-}
-
-i,
-em {
-    font-style: normal;
-}
-
-strong,
-h1,
-h2,
-h3,
-h4 {
-    font-weight: normal;
-}
-
-button {
-    outline: 0 none;
-    border: 0 none;
-    background-color: #fff;
-}
-
-body {
-    font: pr(12)/100% '微软雅黑';
-    background-color: #ffffff;
-}
-
-.clearfix::after {
-    content: "";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    height: 0;
-}
-
-.clearfix {
-    *zoom: 1;
-}
-
+@import "common.scss";
+//头部
 body {
     background-color: #f7f7f7;
 }
 
-//头部
 .header {
     background-color: #f4483e;
     height: pr(44);
@@ -147,7 +62,7 @@ body {
                 width: 100%;
                 height: pr(147);
                 padding: pr(7) pr(10) pr(10);
-                background-color: fff;
+                background-color: #fff;
                 margin-top: pr(6);
                 display: flex;
                 .image {
@@ -233,69 +148,19 @@ body {
     }
 }
 
-.footer {
-    margin-top: pr(32);
-    height: pr(95);
-    background-color: #efefef;
-    border-top: pr(1) solid #c4c4c4;
+.fixed {
+    width: pr(40);
+    height: pr(40);
+    position: fixed;
+    right: pr(10);
+    bottom: pr(30);
+    background-color: #808080;
+    border-radius: pr(20);
     display: flex;
-    flex-direction: column;
-    .bar {
-        height: pr(34);
-        border-bottom: pr(1) solid #c4c4c4;
-        display: flex;
-        a {
-            font-size: pr(13);
-            color: #757575;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .login {
-            width: pr(112);
-            border-right: pr(1) solid #c4c4c4;
-        }
-        .register {
-            width: pr(111);
-            border-right: pr(1) solid #c4c4c4;
-        }
-        .top {
-            flex: 1;
-        }
-    }
-    .content {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        .title {
-            font-size: pr(12);
-            color: #666666;
-            margin-bottom: pr(7);
-            .app {
-                color: #ff0000;
-            }
-        }
-        .web {
-            font-size: pr(10);
-            color: #666666;
-        }
-    }
-    .fixed {
-        width: pr(40);
-        height: pr(40);
-        position: fixed;
-        right: pr(10);
-        bottom: pr(30);
-        background-color: #808080;
-        border-radius: pr(20);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        i {
-            color: #fff;
-            font-size: pr(20);
-        }
+    justify-content: center;
+    align-items: center;
+    i {
+        color: #fff;
+        font-size: pr(20);
     }
 }

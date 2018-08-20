@@ -1,5 +1,4 @@
 $(function () {
-    document.querySelector('html').style.fontSize = screen.width / 10 + 'px';
     mui('.mui-scroll-wrapper').scroll({
         deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
     });
@@ -45,16 +44,9 @@ $(function () {
 
 
 
-    $('.fixed, .top').click(function () {        
-        $('html, body').animate({
-            scrollTop: $($(this).attr('href')).offset().top
-        }, 500);
-        return false;
-    });
 
-    $('.back').click(function(){
-        history.back();
-    });
+
+    
 
 
 
